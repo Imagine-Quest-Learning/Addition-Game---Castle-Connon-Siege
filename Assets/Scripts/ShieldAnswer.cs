@@ -7,14 +7,11 @@ public class ShieldAnswer : MonoBehaviour
     public int answer = 0;
 
     [Header("UI Text (Optional)")]
-    public Text shieldText;  // If you want to display the number on the shield UI
+    public Text shieldText;
 
     private void Start()
     {
-        // If there's a text assigned, display the answer
         if (shieldText != null)
-        {
             shieldText.text = answer.ToString();
-        }
     }
 }

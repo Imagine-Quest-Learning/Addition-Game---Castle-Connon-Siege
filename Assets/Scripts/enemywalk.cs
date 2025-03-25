@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class enemywalk : MonoBehaviour
 {
@@ -14,7 +14,8 @@ public class enemywalk : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentPoint = pointB.transform;
-        anim.SetBool("isRunning", true);
+
+        rb.gravityScale = 0;
     }
 
     void Update()
@@ -42,14 +43,12 @@ public class enemywalk : MonoBehaviour
 
     void flip()
     {
-        if ((currentPoint.position.x > transform.position.x && transform.localScale.x < 0) ||
-            (currentPoint.position.x < transform.position.x && transform.localScale.x > 0))
-        {
-            Vector3 localScale = transform.localScale;
-            localScale.x = -localScale.x;
-            transform.localScale = localScale;
-        }
+        // Always flip localScale.x after switching currentPoint
+        Vector3 localScale = transform.localScale;
+        localScale.x = -localScale.x;
+        transform.localScale = localScale;
     }
+
 
     void OnDrawGizmos()
     {

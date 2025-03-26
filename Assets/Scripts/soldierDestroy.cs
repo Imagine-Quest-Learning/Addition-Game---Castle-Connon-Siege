@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SoldierDestroy : MonoBehaviour
+public class soldierDestroy : MonoBehaviour
 {
     [Header("HP Settings")]
     public int maxHP = 1;

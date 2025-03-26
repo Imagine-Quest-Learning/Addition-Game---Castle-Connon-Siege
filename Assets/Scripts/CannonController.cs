@@ -25,6 +25,7 @@ public class CannonController : MonoBehaviour
 
     void Start()
     {
+        canShoot = true;
         if (OverrideGlobalGravity)
             Physics2D.gravity = new Vector2(0f, CustomGravityY);
 
@@ -33,8 +34,12 @@ public class CannonController : MonoBehaviour
             points[i] = Instantiate(pointPrefab, FirePoint.position, Quaternion.identity);
     }
 
+
     void Update()
     {
+        if (Time.timeScale == 0f)
+            return;
+
         RotateCannonToMouse();
 
         if (Input.GetMouseButtonDown(0) && canShoot)

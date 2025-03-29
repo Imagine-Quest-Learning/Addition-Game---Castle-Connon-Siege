@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+// Manages question generation, answer checking, and UI interaction in the gamepage
 public class QABoardManager : MonoBehaviour
 {
     [Header("Question Settings")]
@@ -11,17 +12,20 @@ public class QABoardManager : MonoBehaviour
     public TextMeshProUGUI questionText;
 
     [Header("Dialog UI")]
-    public GameObject dialogPanel;
-    public TextMeshProUGUI dialogText;
+    public GameObject dialogPanel; // Panel that shows "Correct"/"Wrong"
+    public TextMeshProUGUI dialogText; // Text inside the dialog panel
 
     [Header("Restart Button")]
     public Button restartButton;
 
+    [Header("Menu Button")]
+    public Button BackMenuButton; // Button to return to the start page
+
+    // Singleton pattern to allow easy access to this script
     public static QABoardManager Instance { get; private set; }
 
     private void Awake()
     {
-        // Ensure only one instance of this manager exists
         if (Instance == null)
             Instance = this;
         else
@@ -30,24 +34,70 @@ public class QABoardManager : MonoBehaviour
 
     private void Start()
     {
-        if (questionText != null)
-            questionText.text = $"{a} + {b} = ?";
+        GenerateRandomQuestion();      // Randomly create the math question
+        AssignAnswersToSoldiers();     // Assign answers to all soldier shields
 
         if (dialogPanel != null)
             dialogPanel.SetActive(false);
 
         if (restartButton != null)
+        {
             restartButton.gameObject.SetActive(false);
-
-        if (restartButton != null)
             restartButton.onClick.AddListener(RestartGame);
+        }
+
+        if (BackMenuButton != null)
+        {
+            BackMenuButton.gameObject.SetActive(false);
+            BackMenuButton.onClick.AddListener(BackToStartPage);
+        }
     }
 
+    // Randomly generate values for a and b, and display the question
+    private void GenerateRandomQuestion()
+    {
+        a = Random.Range(0, 10);
+        b = Random.Range(0, 10);
+
+        if (questionText != null)
+            questionText.text = $"{a} + {b} = ?";
+    }
+
+    // Assign answers to all soldiers, with one having the correct result (a + b)
+    private void AssignAnswersToSoldiers()
+    {
+        ShieldAnswer[] allSoldiers = FindObjectsOfType<ShieldAnswer>();
+        if (allSoldiers.Length == 0) return;
+
+        int correctIndex = Random.Range(0, allSoldiers.Length);
+
+        for (int i = 0; i < allSoldiers.Length; i++)
+        {
+            if (i == correctIndex)
+            {
+                allSoldiers[i].answer = a + b; // Assign correct answer
+            }
+            else
+            {
+                int wrongAnswer;
+                do
+                {
+                    wrongAnswer = Random.Range(0, 20);
+                } while (wrongAnswer == (a + b)); // Ensure wrong answer is not equal to correct
+                allSoldiers[i].answer = wrongAnswer;
+            }
+            // Update the number on the shield UI
+            allSoldiers[i].UpdateShieldDisplay();
+        }
+    }
+
+    // Property to get the correct answer
     public int CorrectAnswer => a + b;
 
+    // Called when a soldier is hit; checks if the answer is correct
     public void CheckAnswer(int soldierAnswer)
     {
-        bool isCorrect = (soldierAnswer == CorrectAnswer);
+        bool isCorrect = (soldierAnswer == (a + b));
 
         if (isCorrect)
             ShowDialog("Correct!", Color.green, 50, true);
@@ -55,6 +105,7 @@ public class QABoardManager : MonoBehaviour
             ShowDialog("Wrong!", Color.red, 45, false);
     }
 
+    // Display result dialog and optionally freeze the game
     public void ShowDialog(string message, Color textColor, float fontSize, bool freezeGame)
     {
         if (dialogPanel != null)
@@ -72,9 +123,8 @@ public class QABoardManager : MonoBehaviour
         if (freezeGame)
         {
             Time.timeScale = 0f;
-
             if (restartButton != null)
-                StartCoroutine(ShowRestartButtonAfterDelay(2f));
+                StartCoroutine(ShowRestartButtonAfterDelay(2f)); // Show buttons after delay
         }
         else
         {
@@ -82,26 +132,29 @@ public class QABoardManager : MonoBehaviour
         }
     }
 
-
-    // Hides the dialog panel
+    // Hide the dialog panel and allow shooting again
     public void HideDialog()
     {
         if (dialogPanel != null)
             dialogPanel.SetActive(false);
-
         CannonController.canShoot = true;
     }
 
-    // Called by the restart button to reload the current scene
+    // Restart the current game scene
     private void RestartGame()
     {
-        // Resume time flow before restarting
         Time.timeScale = 1f;
-
-        // Reload the current scene by build index
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // Go back to the start page scene
+    private void BackToStartPage()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("startpage");
+    }
+
+    // Delay showing the Restart and Menu buttons after correct answer
     private System.Collections.IEnumerator ShowRestartButtonAfterDelay(float delay)
     {
         float timePassed = 0f;
@@ -113,6 +166,8 @@ public class QABoardManager : MonoBehaviour
 
         if (restartButton != null)
             restartButton.gameObject.SetActive(true);
-    }
 
+        if (BackMenuButton != null)
+            BackMenuButton.gameObject.SetActive(true);
+    }
 }

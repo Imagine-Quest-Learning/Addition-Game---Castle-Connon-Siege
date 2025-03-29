@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Handles soldier health, collision with cannonball, explosion, and answer checking
 public class soldierDestroy : MonoBehaviour
 {
     [Header("HP Settings")]
@@ -9,24 +10,31 @@ public class soldierDestroy : MonoBehaviour
     [Header("Explosion Prefab")]
     public GameObject boomPrefab;
 
+    // Initialize health and load explosion prefab if not set
     private void Start()
     {
         currentHP = maxHP;
+
         if (boomPrefab == null)
             boomPrefab = Resources.Load<GameObject>("Boom1");
     }
 
+    // Triggered when the soldier collides with something
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Only respond to objects tagged "Ball"
         if (!collision.gameObject.CompareTag("Ball"))
             return;
 
+        // Prevent the same ball from triggering again
         collision.gameObject.tag = "UsedBall";
 
+        // Calculate damage based on impact velocity
         float collisionMagnitude = collision.relativeVelocity.magnitude;
         int damage = (int)(collisionMagnitude * 8);
         currentHP -= damage;
 
+        // If health drops to zero or below, trigger destruction
         if (currentHP <= 0)
         {
             PlayExplosionEffect();
@@ -35,6 +43,7 @@ public class soldierDestroy : MonoBehaviour
         }
     }
 
+    // Checks this soldier's answer and informs the QABoardManager
     private void CheckAnswerAndShowDialog()
     {
         ShieldAnswer shield = GetComponent<ShieldAnswer>();
@@ -44,13 +53,16 @@ public class soldierDestroy : MonoBehaviour
             QABoardManager.Instance.CheckAnswer(shield.answer);
     }
 
+    // Plays the explosion animation and destroys the effect after delay
     private void PlayExplosionEffect()
     {
         Debug.Log("PlayExplosionEffect called");
+
         if (boomPrefab == null) return;
 
         GameObject explosion = Instantiate(boomPrefab, transform.position, Quaternion.identity);
         Debug.Log("Explosion prefab instantiated: " + explosion.name);
+
         if (!explosion) return;
 
         Animator boomAnimator = explosion.GetComponent<Animator>();
@@ -59,7 +71,6 @@ public class soldierDestroy : MonoBehaviour
             Debug.Log("Animator found: " + (boomAnimator != null));
             boomAnimator.SetTrigger("explode");
         }
-
 
         Destroy(explosion, 5f);
     }

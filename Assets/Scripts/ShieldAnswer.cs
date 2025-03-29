@@ -1,17 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
+// Handles displaying the answer number on the soldier's shield
 public class ShieldAnswer : MonoBehaviour
 {
-    [Header("Answer on this soldier's shield")]
-    public int answer = 0;
+    public int answer = 0; // The number assigned to this soldier
+    public TextMeshProUGUI shieldText;
 
-    [Header("UI Text (Optional)")]
-    public Text shieldText;
+    // Initialize the shield display at the start
+    void Start()
+    {
+        UpdateShieldDisplay();
+    }
 
-    private void Start()
+    // Updates the text on the shield to show the current answer
+    public void UpdateShieldDisplay()
     {
         if (shieldText != null)
+        {
             shieldText.text = answer.ToString();
+        }
     }
 }

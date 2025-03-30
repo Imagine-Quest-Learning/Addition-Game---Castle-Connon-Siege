@@ -95,14 +95,17 @@ public class QABoardManager : MonoBehaviour
     public int CorrectAnswer => a + b;
 
     // Called when a soldier is hit; checks if the answer is correct
+
     public void CheckAnswer(int soldierAnswer)
     {
         bool isCorrect = (soldierAnswer == (a + b));
 
-        if (isCorrect)
-            ShowDialog("Correct!", Color.green, 50, true);
-        else
-            ShowDialog("Wrong!", Color.red, 45, false);
+        Color resultColor = isCorrect ? Color.Lerp(Color.green, Color.gray, 0.2f)
+                                      : Color.Lerp(Color.red, Color.gray, 0.2f);
+        float fontSize = isCorrect ? 50 : 45;
+        string message = isCorrect ? "Correct!" : "Wrong!";
+
+        ShowDialog(message, resultColor, fontSize, isCorrect);
     }
 
     // Display result dialog and optionally freeze the game

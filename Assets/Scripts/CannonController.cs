@@ -1,9 +1,9 @@
 using UnityEngine;
 
-// Controls the cannon behavior in the gamepage
+// Controls the cannon behavior on the game page
 public class CannonController : MonoBehaviour
 {
-    // Direction vector from cannon to mouse
+    // Direction vector from the cannon to the mouse
     private Vector2 direction;
 
     [Header("References")]
@@ -22,6 +22,11 @@ public class CannonController : MonoBehaviour
     public bool OverrideGlobalGravity = false;
     public float CustomGravityY = -5f;
 
+    [Header("Audio Settings")]
+    public AudioClip fireSound;
+
+    private AudioSource audioSource;
+
     private GameObject[] points;          // Array to store instantiated trajectory points
     public static bool canShoot = true;
 
@@ -29,7 +34,13 @@ public class CannonController : MonoBehaviour
     {
         canShoot = true;
 
-        // Set custom gravity if enabled
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         if (OverrideGlobalGravity)
             Physics2D.gravity = new Vector2(0f, CustomGravityY);
 
@@ -41,14 +52,13 @@ public class CannonController : MonoBehaviour
 
     void Update()
     {
-        // Do not update while game is paused
         if (Time.timeScale == 0f)
             return;
 
-        // Rotate cannon to face mouse position
+        // Rotate the cannon to face the mouse position
         RotateCannonToMouse();
 
-        // Fire cannonball on mouse click if allowed
+        // Fire the cannonball on mouse click if allowed
         if (Input.GetMouseButtonDown(0) && canShoot)
             Fire();
 
@@ -72,6 +82,13 @@ public class CannonController : MonoBehaviour
     // Instantiates and fires a cannonball
     void Fire()
     {
+        // Play the cannon fire sound effect
+        if (fireSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(fireSound);
+        }
+
+        // Fire the cannonball
         GameObject ball = Instantiate(CannonBall, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = ball.GetComponent<Rigidbody2D>();
         if (rb)

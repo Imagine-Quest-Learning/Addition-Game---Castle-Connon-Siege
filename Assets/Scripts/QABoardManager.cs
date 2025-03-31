@@ -15,6 +15,9 @@ public class QABoardManager : MonoBehaviour
     public GameObject dialogPanel; // Panel that shows "Correct"/"Wrong"
     public TextMeshProUGUI dialogText; // Text inside the dialog panel
 
+    [Header("Sub-Text for Correct Answer")]
+    public TextMeshProUGUI dialogSubText; // Text field for showing the correct answer
+
     [Header("Restart Button")]
     public Button restartButton;
 
@@ -40,6 +43,10 @@ public class QABoardManager : MonoBehaviour
         if (dialogPanel != null)
             dialogPanel.SetActive(false);
 
+        // Hide sub-text by default
+        if (dialogSubText != null)
+            dialogSubText.gameObject.SetActive(false);
+
         if (restartButton != null)
         {
             restartButton.gameObject.SetActive(false);
@@ -63,7 +70,7 @@ public class QABoardManager : MonoBehaviour
             questionText.text = $"{a} + {b} = ?";
     }
 
-    // Assign answers to all soldiers, with one having the correct result (a + b)
+    // Assign answers to all soldiers, with one having the correct result
     private void AssignAnswersToSoldiers()
     {
         ShieldAnswer[] allSoldiers = FindObjectsOfType<ShieldAnswer>();
@@ -95,7 +102,6 @@ public class QABoardManager : MonoBehaviour
     public int CorrectAnswer => a + b;
 
     // Called when a soldier is hit; checks if the answer is correct
-
     public void CheckAnswer(int soldierAnswer)
     {
         bool isCorrect = (soldierAnswer == (a + b));
@@ -104,6 +110,20 @@ public class QABoardManager : MonoBehaviour
                                       : Color.Lerp(Color.red, Color.gray, 0.2f);
         float fontSize = isCorrect ? 50 : 45;
         string message = isCorrect ? "Correct!" : "Wrong!";
+
+        // If correct, show sub-text with the actual answer. Otherwise hide it.
+        if (dialogSubText != null)
+        {
+            if (isCorrect)
+            {
+                dialogSubText.gameObject.SetActive(true);
+                dialogSubText.text = $"Answer is: {a + b}";
+            }
+            else
+            {
+                dialogSubText.gameObject.SetActive(false);
+            }
+        }
 
         ShowDialog(message, resultColor, fontSize, isCorrect);
     }

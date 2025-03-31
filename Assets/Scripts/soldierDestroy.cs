@@ -56,19 +56,15 @@ public class soldierDestroy : MonoBehaviour
     // Plays the explosion animation and destroys the effect after delay
     private void PlayExplosionEffect()
     {
-        Debug.Log("PlayExplosionEffect called");
-
         if (boomPrefab == null) return;
 
         GameObject explosion = Instantiate(boomPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Explosion prefab instantiated: " + explosion.name);
 
         if (!explosion) return;
 
         Animator boomAnimator = explosion.GetComponent<Animator>();
         if (boomAnimator != null)
         {
-            Debug.Log("Animator found: " + (boomAnimator != null));
             boomAnimator.SetTrigger("explode");
         }
 

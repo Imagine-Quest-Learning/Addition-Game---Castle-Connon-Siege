@@ -1,6 +1,6 @@
 # Addition-Game---Castle-Connon-Siege
 
-Castle Cannon Siege is an interactive 2D math game developed for IQ Learning.
+Castle Cannon Siege is an interactive 2D math game developed for IQ Learning Platform.
 
 The game is created with Unity, a game engine for building interactive 2D and 3D experiences. It uses C# to implement game logic, physics-based cannonball motion, and user interaction.
 

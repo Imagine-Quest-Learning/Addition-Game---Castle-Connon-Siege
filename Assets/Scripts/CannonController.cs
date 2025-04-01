@@ -28,11 +28,17 @@ public class CannonController : MonoBehaviour
     private AudioSource audioSource;
 
     private GameObject[] points;          // Array to store instantiated trajectory points
-    public static bool canShoot = true;
+    public static bool canShoot = false;  // Start with false so that cannon can't shoot initially
+
+    // Variables to manage the freeze period
+    private bool isFrozen = true;
+    private float freezeDuration = 2f; // Duration for freezing
 
     void Start()
     {
-        canShoot = true;
+        // Initialize frozen state and disable shooting
+        isFrozen = true;
+        canShoot = false;
 
         // Get the AudioSource component
         audioSource = GetComponent<AudioSource>();
@@ -44,10 +50,13 @@ public class CannonController : MonoBehaviour
         if (OverrideGlobalGravity)
             Physics2D.gravity = new Vector2(0f, CustomGravityY);
 
-        // Instantiate trajectory points
+        // Instantiate trajectory points and hide them initially
         points = new GameObject[NumberOfPoints];
         for (int i = 0; i < NumberOfPoints; i++)
+        {
             points[i] = Instantiate(pointPrefab, FirePoint.position, Quaternion.identity);
+            points[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -55,12 +64,26 @@ public class CannonController : MonoBehaviour
         if (Time.timeScale == 0f)
             return;
 
-        // Rotate the cannon to face the mouse position
-        RotateCannonToMouse();
+        // Use Time.timeSinceLevelLoad to measure time since scene load
+        float timeSinceStart = Time.timeSinceLevelLoad;
 
-        // Fire the cannonball on mouse click if allowed
-        if (Input.GetMouseButtonDown(0) && canShoot)
-            Fire();
+        // After freezeDuration, unfreeze the cannon and show trajectory points
+        if (timeSinceStart >= freezeDuration && isFrozen)
+        {
+            isFrozen = false;
+            canShoot = true;
+            for (int i = 0; i < NumberOfPoints; i++)
+            {
+                points[i].SetActive(true);
+            }
+        }
+
+        // If still frozen, do not update rotation or trajectory points
+        if (isFrozen)
+            return;
+
+        // Only allow cannon rotation after freeze period
+        RotateCannonToMouse();
 
         // Update the position of trajectory points
         for (int i = 0; i < NumberOfPoints; i++)
@@ -68,6 +91,10 @@ public class CannonController : MonoBehaviour
             float t = i * SpaceBetweenPoints;
             points[i].transform.position = CalculateTrajectoryPoint(t);
         }
+
+        // Fire the cannonball on mouse click if allowed
+        if (Input.GetMouseButtonDown(0) && canShoot)
+            Fire();
     }
 
     // Rotates the cannon towards the mouse cursor

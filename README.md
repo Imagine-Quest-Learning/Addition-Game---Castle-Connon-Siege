@@ -1,5 +1,4 @@
 # Addition-Game---Castle-Connon-Siege
-==================
 
 Castle Cannon Siege is an interactive 2D math game developed for IQ Learning.
 
@@ -62,4 +61,9 @@ To run or modify this game project, you'll need the Unity Editor.
 Below is a list of tutorials that have been used for game development:
 
 * **Angry Birds Develop Tutorial** (<a target="_blank" href="https://www.bilibili.com/video/BV13b4y1u73W/?spm_id_from=333.337.search-card.all.click&vd_source=d9a0ffe52dc41bb0bf6d7f75e04e7af1">Source</a>)
+* **Simple 2D Enemy Patrolling Unity tutorial** (<a target="_blank" href="https://www.youtube.com/watch?v=RuvfOl8HhhM">Source</a>)
+* **Unity How to make Cannonball trajectory** (<a target="_blank" href="https://www.youtube.com/watch?v=wagz-q1D4nA">Source</a>)
+* **2D Shooting | Unity Tutorial** (<a target="_blank" href="https://www.youtube.com/watch?v=zYN1LTMdFYg">Source</a>)
+* **Unity Blood bar follow and header text follow** (<a target="_blank" href="https://www.bilibili.com/video/BV1fc411x7he/?spm_id_from=333.337.search-card.all.click&vd_source=d9a0ffe52dc41bb0bf6d7f75e04e7af1">Source</a>)
+* **Unity 2D game development tutorial** (<a target="_blank" href="https://www.bilibili.com/video/BV1BD4y1D7R9/?vd_source=d9a0ffe52dc41bb0bf6d7f75e04e7af1">Source</a>)
 

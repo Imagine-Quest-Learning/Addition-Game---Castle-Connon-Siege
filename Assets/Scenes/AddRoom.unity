@@ -4927,7 +4927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63152863cf7cbf940ae20b9d4b6d27b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
-  targetSceneName: gamepage
+  overlaySceneName: gamepage
+  baseSceneName: AddRoom
   fadeDuration: 1
 --- !u!1 &619394800
 GameObject:

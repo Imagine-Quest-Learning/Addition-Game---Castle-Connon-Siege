@@ -4728,7 +4728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &960453869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4854,6 +4854,7 @@ GameObject:
   - component: {fileID: 1009759541}
   - component: {fileID: 1009759543}
   - component: {fileID: 1009759542}
+  - component: {fileID: 1009759544}
   m_Layer: 0
   m_Name: correctAnswer
   m_TagString: Untagged
@@ -4979,6 +4980,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009759540}
   m_CullTransparentMesh: 1
+--- !u!114 &1009759544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009759540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016edc88c53d84e428f9b9dc23b8c3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  targetSceneName: AddRoom
+  holdSeconds: 5
+  useFade: 0
+  fadeDuration: 0.5
 --- !u!1 &1059910459
 GameObject:
   m_ObjectHideFlags: 0

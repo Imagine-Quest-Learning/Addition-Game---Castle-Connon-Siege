@@ -2,36 +2,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class DialogAutoReturn : MonoBehaviour
+public class DialogAutoReturnSimple : MonoBehaviour
 {
-    public string targetSceneName = "AddRoom";
-    public float holdSeconds = 5f;
-    public bool useFade = true;
-    public float fadeDuration = 0.5f;
-
-    bool started = false;
+    [SerializeField] string targetSceneName = "AddroomOut";
+    [SerializeField] float delaySeconds = 5f;
+    bool started;
 
     void OnEnable()
     {
         if (started) return;
         started = true;
-        StartCoroutine(ReturnFlow());
+        StartCoroutine(JumpAfterDelay());
     }
 
-    IEnumerator ReturnFlow()
+    IEnumerator JumpAfterDelay()
     {
-        var player = FindFirstObjectByType<BasicMovement>();
-        if (player) player.SetCanMove(false);
+        yield return new WaitForSecondsRealtime(delaySeconds);
 
-        yield return new WaitForSecondsRealtime(holdSeconds);
+        if (Time.timeScale != 1f) Time.timeScale = 1f;
 
-        if (useFade)
-        {
-            var fader = FindFirstObjectByType<FadeController>();
-            if (fader != null)
-                yield return fader.FadeIn();
-        }
-
-        SceneManager.LoadScene(targetSceneName);
+        SceneManager.LoadScene(targetSceneName, LoadSceneMode.Single);
     }
 }

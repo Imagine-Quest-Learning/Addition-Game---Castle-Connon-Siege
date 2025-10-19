@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medievalTile_087_0: -1790441491391567384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

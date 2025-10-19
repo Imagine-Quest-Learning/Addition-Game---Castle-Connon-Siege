@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      THEME_12_PARALLAX_12_0: -2360151967624910653
+      THEME_12_PARALLAX_12_1: -8103967719560118763
+      THEME_12_PARALLAX_12_2: -117624940700962974
+      THEME_12_PARALLAX_12_3: -5765191652326912927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      roguelikeChar_magenta_0: -1486259776131215387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

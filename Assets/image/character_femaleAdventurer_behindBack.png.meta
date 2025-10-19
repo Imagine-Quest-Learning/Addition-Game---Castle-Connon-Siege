@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_femaleAdventurer_behindBack_0: -5810331620624094542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

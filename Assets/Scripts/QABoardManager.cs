@@ -73,7 +73,13 @@ public class QABoardManager : MonoBehaviour
     // Assign answers to all soldiers, with one having the correct result
     private void AssignAnswersToSoldiers()
     {
+#if UNITY_2023_1_OR_NEWER
+        ShieldAnswer[] allSoldiers =
+            FindObjectsByType<ShieldAnswer>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+#else
         ShieldAnswer[] allSoldiers = FindObjectsOfType<ShieldAnswer>();
+#endif
+
         if (allSoldiers.Length == 0) return;
 
         int correctIndex = Random.Range(0, allSoldiers.Length);
@@ -117,7 +123,7 @@ public class QABoardManager : MonoBehaviour
             if (isCorrect)
             {
                 dialogSubText.gameObject.SetActive(true);
-                dialogSubText.text = $"Answer is: {a + b}";
+                dialogSubText.text = $"Answer is: {a + b}, You got the Key!";
             }
             else
             {

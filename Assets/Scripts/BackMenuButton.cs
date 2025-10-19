@@ -7,6 +7,6 @@ public class BackMenuButton : MonoBehaviour
     // Loads the "startpage" scene when the menu button is clicked
     public void BackToStartPage()
     {
-        SceneManager.LoadScene("startpage");
+        SceneManager.LoadScene("AddRoom");
     }
 }

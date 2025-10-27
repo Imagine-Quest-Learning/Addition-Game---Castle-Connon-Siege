@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Makes a UI element follow a target in world space
 public class UIFollowTarget : MonoBehaviour
 {
     public RectTransform uiElement;
@@ -25,6 +24,7 @@ public class UIFollowTarget : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         ready = false;
+        if (uiElement) uiElement.gameObject.SetActive(false);
     }
 
     System.Collections.IEnumerator InitNextFrame()
@@ -54,15 +54,44 @@ public class UIFollowTarget : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!ready || target == null || uiElement == null || canvasRect == null) return;
+        if (!ready || uiElement == null || canvasRect == null)
+        {
+            return;
+        }
+
+        if (target == null || !target.gameObject.activeInHierarchy)
+        {
+            if (uiElement.gameObject.activeSelf) uiElement.gameObject.SetActive(false);
+            return;
+        }
+
+        if (worldCamera == null) worldCamera = Camera.main;
 
         Vector3 worldPos = target.position + offset;
-        Vector3 screenPos = (uiCamera == null)
-            ? (worldCamera != null ? worldCamera.WorldToScreenPoint(worldPos) : Vector3.zero)
-            : uiCamera.WorldToScreenPoint(worldPos);
+
+        Vector3 screenPos = (canvas != null && canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            ? (worldCamera != null ? worldCamera.WorldToScreenPoint(worldPos) : new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f))
+            : ((uiCamera != null ? uiCamera : worldCamera).WorldToScreenPoint(worldPos));
+
+        if (screenPos.z < 0f)
+        {
+            if (uiElement.gameObject.activeSelf) uiElement.gameObject.SetActive(false);
+            return;
+        }
 
         Vector2 localPoint;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, uiCamera, out localPoint))
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            screenPos,
+            (canvas != null && canvas.renderMode == RenderMode.ScreenSpaceOverlay) ? null : uiCamera,
+            out localPoint))
+        {
             uiElement.anchoredPosition = localPoint;
+            if (!uiElement.gameObject.activeSelf) uiElement.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (uiElement.gameObject.activeSelf) uiElement.gameObject.SetActive(false);
+        }
     }
 }

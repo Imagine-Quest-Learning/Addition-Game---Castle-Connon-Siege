@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="8" result="Skipped:Ignored" total="8" passed="6" failed="0" inconclusive="0" skipped="2" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2025-10-20 03:15:34Z" end-time="2025-10-20 03:15:39Z" duration="5.2313706">
+  <test-suite type="TestSuite" id="1017" name="TowerRush" fullname="TowerRush" runstate="Runnable" testcasecount="8" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:34Z" end-time="2025-10-20 03:15:39Z" duration="5.231371" total="8" passed="6" failed="0" inconclusive="0" skipped="2" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <reason>
+      <message><![CDATA[One or more child tests were ignored]]></message>
+    </reason>
+    <test-suite type="Assembly" id="1013" name="PlayMode_.dll" fullname="D:/2025fall/seg4911/otherVersion/Addition Game__Castle Connon Siege/Library/ScriptAssemblies/PlayMode_.dll" runstate="Runnable" testcasecount="8" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:34Z" end-time="2025-10-20 03:15:39Z" duration="5.080099" total="8" passed="6" failed="0" inconclusive="0" skipped="2" asserts="0">
+      <properties>
+        <property name="_PID" value="42412" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <reason>
+        <message><![CDATA[One or more child tests were ignored]]></message>
+      </reason>
+      <test-suite type="TestFixture" id="1001" name="CannonFireTests" fullname="CannonFireTests" classname="CannonFireTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2025-10-20 03:15:34Z" end-time="2025-10-20 03:15:36Z" duration="1.674399" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="Fire_Spawns_Projectile" fullname="CannonFireTests.Fire_Spawns_Projectile" methodname="Fire_Spawns_Projectile" classname="CannonFireTests" runstate="Runnable" seed="1193976917" result="Passed" start-time="2025-10-20 03:15:34Z" end-time="2025-10-20 03:15:36Z" duration="1.573556" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1003" name="PlayModeGenericTests" fullname="PlayModeGenericTests" classname="PlayModeGenericTests" runstate="Runnable" testcasecount="3" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:36Z" end-time="2025-10-20 03:15:37Z" duration="0.939674" total="3" passed="2" failed="0" inconclusive="0" skipped="1" asserts="0">
+        <properties />
+        <reason>
+          <message><![CDATA[One or more child tests were ignored]]></message>
+        </reason>
+        <test-case id="1006" name="Scene_Has_EventSystem_For_UI" fullname="PlayModeGenericTests.Scene_Has_EventSystem_For_UI" methodname="Scene_Has_EventSystem_For_UI" classname="PlayModeGenericTests" runstate="Runnable" seed="808031136" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:36Z" end-time="2025-10-20 03:15:36Z" duration="0.712961" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[Scene has no UI; skipping EventSystem check.]]></message>
+          </reason>
+        </test-case>
+        <test-case id="1005" name="Scene_Has_MainCamera" fullname="PlayModeGenericTests.Scene_Has_MainCamera" methodname="Scene_Has_MainCamera" classname="PlayModeGenericTests" runstate="Runnable" seed="862352148" result="Passed" start-time="2025-10-20 03:15:36Z" end-time="2025-10-20 03:15:37Z" duration="0.068657" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="Scene_Loads_Successfully" fullname="PlayModeGenericTests.Scene_Loads_Successfully" methodname="Scene_Loads_Successfully" classname="PlayModeGenericTests" runstate="Runnable" seed="890955571" result="Passed" start-time="2025-10-20 03:15:37Z" end-time="2025-10-20 03:15:37Z" duration="0.122754" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1007" name="PortalTransitionTests" fullname="PortalTransitionTests" classname="PortalTransitionTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2025-10-20 03:15:37Z" end-time="2025-10-20 03:15:38Z" duration="1.770740" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1008" name="Player_Entering_Portal_Disables_Movement_Or_Changes_Scene" fullname="PortalTransitionTests.Player_Entering_Portal_Disables_Movement_Or_Changes_Scene" methodname="Player_Entering_Portal_Disables_Movement_Or_Changes_Scene" classname="PortalTransitionTests" runstate="Runnable" seed="545122217" result="Passed" start-time="2025-10-20 03:15:37Z" end-time="2025-10-20 03:15:38Z" duration="1.749728" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1009" name="SceneAndCameraTests" fullname="SceneAndCameraTests" classname="SceneAndCameraTests" runstate="Runnable" testcasecount="3" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:38Z" end-time="2025-10-20 03:15:39Z" duration="0.674770" total="3" passed="2" failed="0" inconclusive="0" skipped="1" asserts="0">
+        <properties />
+        <reason>
+          <message><![CDATA[One or more child tests were ignored]]></message>
+        </reason>
+        <test-case id="1012" name="Scene_Has_EventSystem_If_Uses_UI" fullname="SceneAndCameraTests.Scene_Has_EventSystem_If_Uses_UI" methodname="Scene_Has_EventSystem_If_Uses_UI" classname="SceneAndCameraTests" runstate="Runnable" seed="1278288598" result="Skipped" label="Ignored" start-time="2025-10-20 03:15:38Z" end-time="2025-10-20 03:15:39Z" duration="0.540847" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[No EventSystem in scene; skipping UI check.]]></message>
+          </reason>
+        </test-case>
+        <test-case id="1011" name="Scene_Has_MainCamera" fullname="SceneAndCameraTests.Scene_Has_MainCamera" methodname="Scene_Has_MainCamera" classname="SceneAndCameraTests" runstate="Runnable" seed="2133458700" result="Passed" start-time="2025-10-20 03:15:39Z" end-time="2025-10-20 03:15:39Z" duration="0.055639" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1010" name="Scene_Loads_Successfully" fullname="SceneAndCameraTests.Scene_Loads_Successfully" methodname="Scene_Loads_Successfully" classname="SceneAndCameraTests" runstate="Runnable" seed="1708572896" result="Passed" start-time="2025-10-20 03:15:39Z" end-time="2025-10-20 03:15:39Z" duration="0.054391" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: C:/Users/32045/AppData/LocalLow/DefaultCompany/TowerRush\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

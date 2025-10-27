@@ -548,8 +548,8 @@ Tilemap:
   - first: {x: -4, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 14
-      m_TileSpriteIndex: 14
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -663,9 +663,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ed29d6af73b85f149bfe8878a84bed1c, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 3d92ffb74b90dd84d9d5463f85a63362, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 8b8bf8fbe05269449b8836932c3dee90, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -694,9 +694,9 @@ Tilemap:
     m_Data: {fileID: 4755373664117421245, guid: 1744463ad23d5c440b3c275659fbecb0, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: -5697566233098705968, guid: edc327af0857cde499cb882354361276, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {fileID: -8420670720628680731, guid: 1744463ad23d5c440b3c275659fbecb0, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 38
@@ -5185,8 +5185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.2184, y: 1.171}
-  m_SizeDelta: {x: 1070.4792, y: 550.7426}
+  m_AnchoredPosition: {x: 124.6035, y: 0.7652}
+  m_SizeDelta: {x: 3107.7522, y: 1539.2852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &744325758
 CanvasGroup:
@@ -6000,8 +6000,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.1240234, y: 285}
-  m_SizeDelta: {x: -1046.233, y: -853.842}
+  m_AnchoredPosition: {x: 0, y: 288.4605}
+  m_SizeDelta: {x: -880, y: -846.921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692498887
 MonoBehaviour:
@@ -6518,8 +6518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 0.00077057}
-  m_SizeDelta: {x: 800, y: 449.95}
+  m_AnchoredPosition: {x: 189.70428, y: 160.33485}
+  m_SizeDelta: {x: 2777.6558, y: 1303.3672}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2129806973
 Animator:

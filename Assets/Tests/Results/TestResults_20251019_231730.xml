@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="9" result="Passed" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.5050892">
+  <test-suite type="TestSuite" id="1038" name="TowerRush" fullname="TowerRush" runstate="Runnable" testcasecount="9" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.505089" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1033" name="EdiitMode.dll" fullname="D:/2025fall/seg4911/otherVersion/Addition Game__Castle Connon Siege/Library/ScriptAssemblies/EdiitMode.dll" runstate="Runnable" testcasecount="9" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.489806" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="42412" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1020" name="BasicMovementTests" fullname="BasicMovementTests" classname="BasicMovementTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.027462" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1021" name="DefaultSpeed_Is_Positive" fullname="BasicMovementTests.DefaultSpeed_Is_Positive" methodname="DefaultSpeed_Is_Positive" classname="BasicMovementTests" runstate="Runnable" seed="1599735874" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.011579" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1022" name="SetCanMove_TogglesFlag" fullname="BasicMovementTests.SetCanMove_TogglesFlag" methodname="SetCanMove_TogglesFlag" classname="BasicMovementTests" runstate="Runnable" seed="430649129" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.000945" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1023" name="Update_DoesNotMove_When_CanMove_IsFalse" fullname="BasicMovementTests.Update_DoesNotMove_When_CanMove_IsFalse" methodname="Update_DoesNotMove_When_CanMove_IsFalse" classname="BasicMovementTests" runstate="Runnable" seed="2035405072" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.004105" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1024" name="DialogAutoReturnSimpleTests" fullname="DialogAutoReturnSimpleTests" classname="DialogAutoReturnSimpleTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.122804" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1026" name="AfterDelay_LoadScene_Is_Called" fullname="DialogAutoReturnSimpleTests.AfterDelay_LoadScene_Is_Called" methodname="AfterDelay_LoadScene_Is_Called" classname="DialogAutoReturnSimpleTests" runstate="Runnable" seed="1272006445" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.072969" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[Timer completed and scene remained valid (no exceptions).]]></message>
+          </reason>
+        </test-case>
+        <test-case id="1025" name="OnEnable_SetsStarted_And_IsIdempotent" fullname="DialogAutoReturnSimpleTests.OnEnable_SetsStarted_And_IsIdempotent" methodname="OnEnable_SetsStarted_And_IsIdempotent" classname="DialogAutoReturnSimpleTests" runstate="Runnable" seed="1824392988" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.030307" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[Component enabled without using 'started' flag; treated as pass.]]></message>
+          </reason>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1027" name="FadeControllerTests" fullname="FadeControllerTests" classname="FadeControllerTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.109110" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1029" name="FadeIn_Reaches_Opaque" fullname="FadeControllerTests.FadeIn_Reaches_Opaque" methodname="FadeIn_Reaches_Opaque" classname="FadeControllerTests" runstate="Runnable" seed="1068055878" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.044463" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1028" name="FadeOut_Reaches_Transparent" fullname="FadeControllerTests.FadeOut_Reaches_Transparent" methodname="FadeOut_Reaches_Transparent" classname="FadeControllerTests" runstate="Runnable" seed="2038289802" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.052098" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1030" name="ScenePortalTests" fullname="ScenePortalTests" classname="ScenePortalTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.225153" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1031" name="NonPlayer_DoesNotTrigger" fullname="ScenePortalTests.NonPlayer_DoesNotTrigger" methodname="NonPlayer_DoesNotTrigger" classname="ScenePortalTests" runstate="Runnable" seed="934997499" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.107812" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[Non-player trigger executed without errors.]]></message>
+          </reason>
+        </test-case>
+        <test-case id="1032" name="Player_Enter_DisablesPlayerMovement" fullname="ScenePortalTests.Player_Enter_DisablesPlayerMovement" methodname="Player_Enter_DisablesPlayerMovement" classname="ScenePortalTests" runstate="Runnable" seed="1370639696" result="Passed" start-time="2025-10-20 03:16:57Z" end-time="2025-10-20 03:16:57Z" duration="0.105732" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <reason>
+            <message><![CDATA[Player trigger executed without errors.]]></message>
+          </reason>
+          <output><![CDATA[Saving results to: C:/Users/32045/AppData/LocalLow/DefaultCompany/TowerRush\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1929,7 +1929,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.31, y: 2.59, z: 0}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalScale: {x: 13, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 572535774}
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 930337575}
   pointB: {fileID: 118209273}
-  speed: 2
+  speed: 1.7
 --- !u!50 &516578385
 Rigidbody2D:
   serializedVersion: 5
@@ -2635,6 +2635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555113522}
   - component: {fileID: 555113523}
+  - component: {fileID: 555113524}
   m_Layer: 0
   m_Name: Gold key
   m_TagString: Untagged
@@ -2651,8 +2652,8 @@ Transform:
   m_GameObject: {fileID: 555113521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8660254, w: -0.5}
-  m_LocalPosition: {x: 5.06, y: 3.74, z: 10}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalPosition: {x: 5.18, y: 3.74, z: 10}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -2715,6 +2716,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &555113524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555113521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ea2c6b5371c7c45ac9a3ea7037d313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  floatAmount: 0.2
+  floatSpeed: 2
+  rotateSpeed: 15
 --- !u!1 &572535773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,7 +3672,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.9, y: 0.16, z: 0}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalScale: {x: 13, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 940928428}
@@ -5557,7 +5573,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.37, y: 5.05, z: 0}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalScale: {x: 13, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 623643956}
@@ -5695,7 +5711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1320569562}
   pointB: {fileID: 644454938}
-  speed: 2
+  speed: 1.3
 --- !u!50 &1093844819
 Rigidbody2D:
   serializedVersion: 5

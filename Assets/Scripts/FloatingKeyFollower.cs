@@ -6,10 +6,10 @@ public class FloatingKeyFollower : MonoBehaviour
 
     public Vector2 offset = new Vector2(0.6f, 0.5f);
 
-    public float followLerp = 12f;
+    public float followLerp;
 
-    public float bobAmplitude = 0.08f;
-    public float bobFrequency = 2f;
+    public float bobAmplitude;
+    public float bobFrequency;
 
     void Awake()
     {

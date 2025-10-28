@@ -5,7 +5,7 @@ using System.Collections;
 public class DialogAutoReturnSimple : MonoBehaviour
 {
     [SerializeField] string targetSceneName = "AddroomOut";
-    [SerializeField] float delaySeconds = 5f;
+    [SerializeField] float delaySeconds = 3f;
     bool started;
 
     void OnEnable()

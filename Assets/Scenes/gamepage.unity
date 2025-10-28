@@ -5359,7 +5359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   targetSceneName: AddroomOut
-  delaySeconds: 5
+  delaySeconds: 3
 --- !u!1 &1059910459
 GameObject:
   m_ObjectHideFlags: 0
